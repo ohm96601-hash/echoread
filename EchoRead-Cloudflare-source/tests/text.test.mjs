@@ -1,0 +1,3 @@
+import {test} from 'node:test';import assert from 'node:assert/strict';import {segment,validateBackup} from '../lib/text.mjs';
+test('segment preserves decimal, abbreviation and paragraph order',()=>{const s=segment('Dr. Smith paid $3.50. Is that right?\n\nYes, it is!');assert.equal(s.join(' '),'Dr. Smith paid $3.50. Is that right? Yes, it is!');assert.ok(s.some(x=>x.includes('3.50')));assert.equal(s.at(-1),'Yes, it is!')});
+test('reject malformed imports and dangling sentences',()=>{assert.throws(()=>validateBackup({version:1,articles:[],sentences:[{id:'x',articleId:'missing'}]}));assert.throws(()=>validateBackup({version:2,articles:[],sentences:[]}));assert.deepEqual(validateBackup({version:1,articles:[],sentences:[]}).articles,[])});
