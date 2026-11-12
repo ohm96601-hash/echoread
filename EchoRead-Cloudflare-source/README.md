@@ -29,3 +29,6 @@ Azure TTS and pronunciation scoring are not implemented (provider extension rese
 - [ ] Keyboard leaves textarea and save reachable by sheet scroll
 
 Do not treat desktop browser checks as physical iPhone verification. Safari storage can be evicted; back up regularly. PWA private hosting may require sign-in when reconnecting. Offline speech depends on downloaded system voices. Recording stops on background and tracks are released; playback URLs survive only until reload/close. Recordings are never network-request payloads.
+
+## Feedback update
+Original-text mode now preserves article paragraphs in a continuous document. Listening is a dedicated player with blind listening, sentence loop, auto-next, speed, repetition and pauses, with no recording UI. Practice retains inline recording cards. Free translation defaults to MyMemory without an API key, discloses third-party transmission before first use per session, splits to under 500 bytes, checks errors and saves successful translations locally. Anonymous provider quota is 5,000 characters/day per official documentation and availability is not guaranteed. A configured server translation key overrides the free provider. No paid fallback is triggered automatically.
